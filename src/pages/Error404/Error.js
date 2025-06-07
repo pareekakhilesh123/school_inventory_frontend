@@ -1,45 +1,36 @@
-import React  from "react";
+ import React  from "react";
 import { login } from "../../assest";
+import Navbar from "../../components/Navbar/Navbar";
+
 
 
 const Error = () => {
   return (
-    <div className="h-screen w-screen flex">
-   
-      {/* Right side */}
-      <div className="w-full md:w-1/2 flex items-center justify-center bg-white">
-        <div className="w-full max-w-md p-8">
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
-          404 Error Page 
-          </h2>
+    <div className="Navbar">
+      <Navbar />
+      <div className="flex flex-col md:flex-row h-screen w-screen">
+        {/* Left side */}
+        <div className="w-full md:w-1/2 flex items-center justify-center bg-white p-4">
+          <div className="w-full max-w-md text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">404 Error Page</h2>
+            <p className="text-gray-700 mb-2">Page not found</p>
+            <p className="text-gray-600">
+              Sorry, we couldn’t find the page you’re looking for.
+            </p>
+          </div>
+        </div>
 
-            <div>
-              <label className="block text-gray-700">
-                Page not found
-              </label>
-           
-            </div>
-
-            <div>
-              <label className="block text-gray-700">
-                Sorry, we couldn’t find the page you’re looking for.
-              </label>
-          
-          
-            </div>
-
-         
-          
-        
+        {/* Right side */}
+        <div className="w-full  hidden md:block">
+          <img
+            src={login}
+            alt="Error Illustration"
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
-
-         {/* Left side */}
-      <div className="w-1/2 hidden md:block">
-        <img src={login} alt="Login" className="w-full h-full object-cover" />
-      </div>
-
     </div>
   );
 };
-export default Error
+
+export default Error;
